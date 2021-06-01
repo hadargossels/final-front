@@ -26,9 +26,6 @@ const dataProvider = simpleRestProvider('http://localhost:5000',httpClient);
 const Administrator = () => (
 
     <Admin dataProvider={dataProvider}
-    // title=""
-    // customReducers={{ theme: themeReducer }}
-    // customRoutes={customRoutes}
     authProvider={authProvider}
     dashboard={Dashboard}
     loginPage={Login}
@@ -42,9 +39,7 @@ const Administrator = () => (
            <Resource name="faq" list={faqList} edit={faqEdit} create={faqCreate}/>
            <Resource name="shipping" list={shippingList} edit={shippingEdit} create={shippingCreate}/>
            <Resource name="storeInfo" list={storeInfoList} edit={storeInfoEdit} create={storeInfoCreate}/>
-           <Resource name="dashboard"/>
-           {/* <div class="RaUserMenu-user-19"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit" tabindex="0" type="button" aria-label="Profile" aria-haspopup="true" title="Profile"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path></svg></span></button></div> */}
-           
+           <Resource name="dashboard"/>  
     </Admin>
     
 );
