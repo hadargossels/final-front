@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import './Newaccount.css'
 import Login from '../login/Login';
 

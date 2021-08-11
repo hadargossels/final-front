@@ -30,6 +30,7 @@ class Store extends Component{
     this.search = this.search.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.addToWish = this.addToWish.bind(this);
+    this.getStore = this.getStore.bind(this);
     this.searchK()
     this.newFeatured()
       }
@@ -41,10 +42,13 @@ componentWillMount () {
 
 async getStore() {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_URL}/product/`);
+    await axios.get(`${process.env.REACT_APP_URL}/product/`)
+    .then((response) => {
     let product = response.data;
+    console.log(product)
     this.setState({product, display: product})
     this.paginationSetup()
+    })
   } catch (error) {
     console.error(error);
   }
@@ -80,7 +84,7 @@ async getStore() {
             }
          }
       }
-      if (flag == true) {
+      if (flag === true) {
          let cartObj = {itemId: itemId, quantity: quantity, src: src, name: name, price: price}
          cart.push(cartObj)
       }
@@ -191,7 +195,7 @@ async getStore() {
         }
       }
       
-      if (display.length === 0 && this.state.searchKey == "") {
+      if (display.length === 0 && this.state.searchKey === "") {
         display = product
       }
       else if (display.length === 0 && this.state.searchKey !== "") {

@@ -47,7 +47,7 @@ export class Post extends Component {
     findIndex () {
         let i = 0;
         for (const element of this.state.blog) {
-           if (this.props.match.params.postid == element.id)
+           if (this.props.match.params.postid === element.id)
            {i = element.id - 1; }
         }
         setTimeout(()=>{this.setState({i})

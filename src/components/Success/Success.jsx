@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Success.css'
-let orderId = localStorage.getItem("orderId")
+
 export class Success extends Component {
     render() {
         return (

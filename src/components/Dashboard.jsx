@@ -20,7 +20,7 @@ export default function Dashboard() {
         await axios.get(`${process.env.REACT_APP_URL}/user/`)
         .then((response)=>{
             response.data.forEach(element => {
-                if (element.email == currentUser.user) {
+                if (element.email === currentUser.user) {
                     setUser({...element})
                 }
             });

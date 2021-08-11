@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import './Product.css';
 import axios from 'axios'
-import { NavLink } from 'react-router-dom';
 
 class Product extends PureComponent {
    constructor(props) {
@@ -50,7 +49,7 @@ class Product extends PureComponent {
       let i = 0;
       let pageNum = this.state.pageNum
       for (const element of this.state.product) {
-         if (pageNum == element.id + 1)
+         if (pageNum === element.id + 1)
          {i = element.id}
       }
       
@@ -82,7 +81,7 @@ class Product extends PureComponent {
             }
          }
       }
-      if (flag == true) {
+      if (flag === true) {
          let cartObj = {itemId: itemId, quantity: quantity, src: src, name: name, price: price}
          cart.push(cartObj)
       }

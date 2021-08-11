@@ -49,7 +49,7 @@ export default function UpdateProfile() {
         if (users) {
             
         users.forEach(element => {
-            if (element.email == currentUser.user) {
+            if (element.email === currentUser.user) {
                 setUser({...element})
             }
         });

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Route,Switch, BrowserRouter as Router} from 'react-router-dom'
 import './index.css';
 import Header from './components/header/Header';
 import App from './App';
@@ -13,10 +12,8 @@ import Blog from './components/blog/Blog';
 import Shipping from './components/shipping/Shipping'
 import Faq from './components/faq/Faq'
 import Product from './components/product/Product'
-// import Login from './components/login/Login'
 import Cart from './components/Cart/Cart';
 import Payment from './components/payment/Payment';
-// import Newaccount from './components/newAccount/Newaccount';
 import WishList from './components/WishList/WishList';
 import Post from './components/Post/Post';
 import { AuthProvider } from "./AuthContext";
@@ -29,7 +26,6 @@ import ForgotPassword from "./components/ForgotPassword";
 import UpdateProfile from "./components/UpdateProfile";
 import Administrator from './components/admin/Administrator';
 import Profile from './components/Profile';
-import Demo from './react-admin-demo-js/App';
 
 
 
@@ -37,13 +33,13 @@ localStorage.setItem("orderErr","")
 localStorage.setItem("orderId","")
 
 function setLocalStorage () {
-  if (localStorage.getItem("cart") == undefined) {
+  if (localStorage.getItem("cart") === undefined) {
     localStorage.setItem("cart",JSON.stringify([]))
   }
-  if (localStorage.getItem("user") == undefined) {
+  if (localStorage.getItem("user") === undefined) {
     localStorage.setItem("user","")
   }
-  if (localStorage.getItem("wishList") == undefined) {
+  if (localStorage.getItem("wishList") === undefined) {
     localStorage.setItem("wishList",JSON.stringify([]))
   }
 }
@@ -72,11 +68,9 @@ const router = (
      <Route path="/Shipping" component={Shipping}/>
      <Route path="/Faq" component={Faq}/>
      <Route path='/Admin' component={Administrator}/>
-     {/* <Route path="/Login" component={Login}/> */}
      <Route path="/Product/:productid" component={Product}/>
      <Route exact path = "/Cart" component={Cart}/>
      <Route exact path = "/Payment" component={Payment}/>
-     {/* <Route exact path = "/NewAccount" component={Newaccount}/> */}
      <Route exact path = "/WishList" component={WishList}/>
      <Route exact path = "/Post/:postid" component={Post}/>
      <PrivateRoute exact path="/Dashboard" component={Dashboard}/>
@@ -85,7 +79,6 @@ const router = (
     <Route exact path='/signup' component={Signup}/>
     <Route exact path='/login' component={Login}/>
     <Route exact path='/forgot-password' component={ForgotPassword}/>
-    <Route exact path='/demo' component={Demo}/>
      <Route component={NotFound}/>
   </Switch>
   <Footer/>
