@@ -20,7 +20,7 @@ const httpClient = (url, options = {}) => {
   return fetchUtils.fetchJson(url, options);
 };
 
-const dataProvider = simpleRestProvider('http://localhost:5000',httpClient);
+const dataProvider = simpleRestProvider(`${process.env.REACT_APP_URL}`);
 
 
 const Administrator = () => (
